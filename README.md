@@ -6,6 +6,30 @@ The code that allows Tautology's flame effects to be controlled by MIDI
 
 ![Synferno Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/block_diagram_v20170403.png)
 
+# Console Interface Layout
+
+The back of the console has six interface components:
+
+* One DIN-5 MIDI input port
+* One potentiometer for calibration
+* One rocker-style power switch
+* One IEC power socket
+* Two SpeakOn connectors to drive the flame effects
+
+The top of the console has nine interface components:
+
+* One blue LED indicating power supply status
+* One green LED indicating microcontroller status
+* One yellow LED indicating MIDI synchronization status
+* One orange LED indicating controller arming status
+* One red LED indicating fire control signal status
+* One slide potentiometer to set flame duration
+* One key-lock switch to ensure user is permitted to run console
+* One arming switch to ensure user wants to run console
+* One big red button to initiate manual fire control signalling
+
+![Synferno Console Interface Layout](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/Synferno%20Console%20Interface%20Layout.png)
+
 # Bill of Materials
 
 The following parts are required to build the Synferno console.
