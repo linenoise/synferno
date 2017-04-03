@@ -2,11 +2,7 @@
 
 The code that allows Tautology's flame effects to be controlled by MIDI
 
-# Block Diagram
-
-![Synferno Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/block_diagram_v20170403.png)
-
-# Console Interface Layout
+# Console Interface
 
 The back of the console has six interface components:
 
@@ -29,6 +25,10 @@ The top of the console has nine interface components:
 * One big red button to initiate manual fire control signalling
 
 ![Synferno Console Interface Layout](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/Synferno%20Console%20Interface%20Layout.png)
+
+# Block Diagram
+
+![Synferno Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/block_diagram_v20170403.png)
 
 # Bill of Materials
 
