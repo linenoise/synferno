@@ -8,7 +8,7 @@ There are two types of components in this system: One console and one or more fl
 
 The synferno console is the device that sits in the DJ booth and allows the performer to synchronize her hardware to the flame effects.
 
-## Console Interface
+## Console Physical Layout
 
 The back of the console has six interface components:
 
@@ -80,6 +80,14 @@ The design of the flame effects closely parallels the design of [Mike Dodds' *Am
 When the flame effects are being used as *Synferno* accumulators, they are connected as with any other sound system component: with locking, interference-resistant SpeakOn cables. When the flame effects are being used as *Amplifire* accumulators, they are controlled via WiFi and infrared sensors.
 
 The default configuration of Synferno is to setup one flame effect each on the right and left channels of the controller. Each flame effect has pass-through SpeakOn port, however, so multiple flame effects may also be connected in series.
+
+## Flame Effect Physical Layout
+
+![Flame Effect Physical Layout](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/accumulator_physical.png)
+
+## Flame Effect Block Diagram
+
+![Flame Effect Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/accumulator_diagram.png)
 
 ## Flame Effect Bill of Materials
 
