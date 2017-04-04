@@ -2688,15 +2688,6 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
-					<key>Color</key>
-					<dict>
-						<key>b</key>
-						<string>0</string>
-						<key>g</key>
-						<string>0</string>
-						<key>r</key>
-						<string>1</string>
-					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2804,15 +2795,6 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
-					<key>Color</key>
-					<dict>
-						<key>b</key>
-						<string>0</string>
-						<key>g</key>
-						<string>0</string>
-						<key>r</key>
-						<string>1</string>
-					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -6253,7 +6235,7 @@ Flame Effect}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-03 23:08:37 +0000</string>
+	<string>2017-04-04 01:27:28 +0000</string>
 	<key>Modifier</key>
 	<string>Linenoise</string>
 	<key>NotesVisible</key>
