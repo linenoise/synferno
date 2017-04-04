@@ -2,7 +2,7 @@
 
 This codebase contains the software and hardware designs that allow Tautology's flame effects to be controlled by MIDI devices. Synferno is an group of flame effects that are sequenced, synchronized, and controlled by DJs and other electronic musicians. Beats and heats.
 
-There are two types of components in this system: One console and one or more flame effects.
+A synferno system consists of a console and one or more flame effects. The default configuration has one flame effect each on the right and left channels. Each flame effect has a pass-through SpeakOn port, which allows for multiple flame effects to be connected in series on stage left and stage right.
 
 # Console
 
@@ -78,8 +78,6 @@ The following parts are required to build the Synferno console.
 The design of the flame effects closely parallels the design of [Mike Dodds' *Amplifire* design](https://github.com/the-magister/amplifire). Please reference his codebase for hardware designs of the flame effects.
 
 When the flame effects are being used as *Synferno* accumulators, they are connected as with any other sound system component: with locking, interference-resistant SpeakOn cables. When the flame effects are being used as *Amplifire* accumulators, they are controlled via WiFi and infrared sensors.
-
-The default configuration of Synferno is to setup one flame effect each on the right and left channels of the controller. Each flame effect has pass-through SpeakOn port, however, so multiple flame effects may also be connected in series.
 
 ## Flame Effect Physical Layout
 
