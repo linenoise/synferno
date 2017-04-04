@@ -6,6 +6,7 @@
 // Danne Stayskal <danne@stayskal.com>
 // -----------------------------------------------------------------------------
 
+#include "Synferno.h"
 
 // MIDI buffer and counter
 SoftwareSerial mySerial(MIDI_RX_PIN, MIDI_TX_PIN);
