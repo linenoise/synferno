@@ -65,7 +65,7 @@ The following parts are required to build the Synferno console.
 | Status    | 1x       | Yellow Sync LED | [Yellow LED](https://www.radioshack.com/products/5mm-yellow-led) |
 | Status    | 1x       | Orange Armed LED | [Orange LED](https://www.radioshack.com/products/5mm-orance-led-1) |
 | Status    | 1x       | Red Fire LED | [Red LED](https://www.radioshack.com/products/5mm-red-led-1) |
-| Logic     | 1x       | Arduino Mega | [Arduino Mega](https://smile.amazon.com/OSOYOO-MEGA2560-Control-ATMEGA2560-16AU-Compatible/dp/B00PD92EJ8/) |
+| Logic     | 1x       | Arduino Uno | [Arduino Uno](https://smile.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/) |
 | Logic     | 1x       | 4 Channel Relay Module | [SainSmart 20-018-901](https://www.sainsmart.com/sainsmart-4-channel-5v-solid-state-relay-module-board-omron-ssr-avr-dsp-arduino.html) |
 | Logic     | 1x       | Power Rail Connector Wire | [Spool Red Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
 | Logic     | 1x       | Ground Plane Connector Wire | [Spool Black Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
@@ -103,6 +103,6 @@ When the flame effects are being used as *Synferno* accumulators, they are conne
 
 * [Arduino MIDI Library](https://github.com/FortySevenEffects/arduino_midi_library/)
 * [Arduino MIDI Library Reference](http://arduinomidilib.fortyseveneffects.com/index.html)
-* [Hardware Integration Example](http://www.notesandvolts.com/2015/02/midi-and-arduino-build-midi-input.html)
-* [Software Integration Example](http://www.notesandvolts.com/2015/02/midi-for-arduino-input-test.html)
+* [Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/SoftwareSerial)
+* [Software Integration Example](http://libremusicproduction.com/tutorials/arduino-and-midi-in)
 

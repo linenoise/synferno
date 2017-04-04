@@ -3696,7 +3696,7 @@ Resistor}</string>
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 D19}</string>
+\f0\fs24 \cf0 D10}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -4229,7 +4229,7 @@ Resistor}</string>
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 Arduino Mega}</string>
+\f0\fs24 \cf0 Arduino Uno}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -5511,7 +5511,7 @@ Resistor}</string>
 			<key>OrthogonalBarPoint</key>
 			<string>{0, 0}</string>
 			<key>OrthogonalBarPosition</key>
-			<real>5.7719578742980957</real>
+			<real>3.7719578742980957</real>
 			<key>Points</key>
 			<array>
 				<string>{98.523748037154718, 260.54391565923623}</string>
@@ -5523,15 +5523,6 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
-					<key>Color</key>
-					<dict>
-						<key>b</key>
-						<string>1</string>
-						<key>g</key>
-						<string>0.501961</string>
-						<key>r</key>
-						<string>0</string>
-					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5540,6 +5531,8 @@ Resistor}</string>
 					<integer>2</integer>
 					<key>TailArrow</key>
 					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -5706,21 +5699,14 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
-					<key>Color</key>
-					<dict>
-						<key>b</key>
-						<string>1</string>
-						<key>g</key>
-						<string>0.501961</string>
-						<key>r</key>
-						<string>0</string>
-					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
 					<true/>
 					<key>TailArrow</key>
 					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -6097,8 +6083,8 @@ Resistor}</string>
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{688.2666696514334, 144.4999305503685}</string>
-				<string>{687.98333622197288, 161.5000694496328}</string>
+				<string>{688.26666633639559, 144.49993055036848}</string>
+				<string>{687.983328881479, 161.50006944963152}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -6374,8 +6360,8 @@ DIN Socket}</string>
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{795.97899040983373, 161.50007061490697}</string>
-				<string>{796.26470706915848, 144.49992938509303}</string>
+				<string>{795.9789904098335, 161.50007061490697}</string>
+				<string>{796.26470706915813, 144.49992938509303}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -6587,8 +6573,9 @@ Flame Effect}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f0\b\fs24 \cf0 Synferno Block Diagram \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\b0 v.2017-04-03
+\b0 \cf0 v.2017-04-04
 \b \
 
 \b0 Danne Stayskal &lt;danne@stayskal.com&gt;}</string>
@@ -6714,7 +6701,7 @@ Flame Effect}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-04 19:33:20 +0000</string>
+	<string>2017-04-04 23:24:26 +0000</string>
 	<key>Modifier</key>
 	<string>Linenoise</string>
 	<key>NotesVisible</key>
@@ -6809,7 +6796,7 @@ Flame Effect}</string>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-38, 0}, {940.38464987771874, 665.38463979077846}}</string>
+		<string>{{-38, 29.807693401031987}, {940.38464987771874, 665.38463979077846}}</string>
 		<key>Zoom</key>
 		<real>1.0399999618530273</real>
 		<key>ZoomValues</key>

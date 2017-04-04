@@ -6,29 +6,15 @@
 // Danne Stayskal <danne@stayskal.com>
 // -----------------------------------------------------------------------------
 
-#include <MIDI.h>
-#include "TimerOne.h"
-
-// Digital output pin mappings
-#define SYNC_LED_PIN 2
-#define ARM_LED_PIN 3
-#define FIRE_LED_PIN 4
-#define FIRE_LEFT_CHANNEL_PIN 5
-#define FIRE_RIGHT_CHANNEL_PIN 5
-
-// Digital input pin mappings
-#define ARMING_SWITCH_PIN 7
-#define MANUAL_FIRE_SWITCH_PIN 8
-#define KEY_LOCK_PIN 9
-
-// Analog pin mappings
-#define CALIBRATION_POT_PIN 0
-#define DURATION_POT_PIN 1
 
 // MIDI buffer and counter
+SoftwareSerial mySerial(MIDI_RX_PIN, MIDI_TX_PIN);
 unsigned clockCounter = 0;
-byte inputByte = 0;
 bool inputSynced = false;
+const int midiSendDelay = 100; // give MIDI-device a short time to "digest" MIDI messages
+byte midiByte;
+byte midiChannel;
+byte midiCommand;
 
 // Input buffers
 bool enabled = false;          // Key Lock
@@ -42,8 +28,6 @@ unsigned long this_beat_millis = 0;
 unsigned long last_beat_millis = 0;
 unsigned int inter_beat_period = 0;
 unsigned int total_delay = 0;
-
-MIDI_CREATE_DEFAULT_INSTANCE(HardwareSerial, Serial1, MIDI);
 
 
 // -----------------------------------------------------------------------------
@@ -92,11 +76,14 @@ void syncInterfaces() {
 // -----------------------------------------------------------------------------
 
 void processMidi() {
-    if (MIDI.read()) {
-		inputByte = MIDI.getType();
+    if (mySerial.available() > 0) {
+
+    midiByte = mySerial.read();
+    midiChannel = midiByte & B00001111;
+    midiCommand = midiByte & B11110000;
 
 		// Sync to the downbeat when the DJ starts or continues
-        if ((inputByte == midi::Start) || (inputByte == midi::Continue)) {
+    if ((midiByte == MIDI_START) || (midiByte == MIDI_CONTINUE)) {
 			clockCounter = 0;
 			Timer1.resume();
 			inputSynced = true;
@@ -104,14 +91,14 @@ void processMidi() {
 		}
 
 		// Stop when the DJ stops
-        if (inputByte == midi::Stop) {
+    if (midiByte == MIDI_STOP) {
 			Timer1.stop();
 			inputSynced = false;
 			digitalWrite(SYNC_LED_PIN, LOW);
 		}
 		
 		// We get 24 clock ticks per beat. Wait for it...
-        if (inputByte == midi::Clock) {
+        if (midiByte == MIDI_CLOCK) {
 			if (clockCounter < 24) {
 				clockCounter = clockCounter + 1;
 			} else {
@@ -184,11 +171,13 @@ void setup() {
 
     pinMode(ARMING_SWITCH_PIN, INPUT);
     pinMode(MANUAL_FIRE_SWITCH_PIN, INPUT);
-	pinMode(KEY_LOCK_PIN, INPUT);
+		pinMode(KEY_LOCK_PIN, INPUT);
 
-	Timer1.initialize();
-	Timer1.attachInterrupt(fireControl);
-    MIDI.begin();
+		Timer1.initialize();
+		Timer1.attachInterrupt(fireControl);
+
+    mySerial.begin(31250);
+    delay(midiSendDelay);
 }
 
 
