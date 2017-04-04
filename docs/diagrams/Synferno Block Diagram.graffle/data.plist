@@ -14,7 +14,7 @@
 	<key>BackgroundGraphic</key>
 	<dict>
 		<key>Bounds</key>
-		<string>{{0, 0}, {864, 864}}</string>
+		<string>{{0, 0}, {864, 828}}</string>
 		<key>Class</key>
 		<string>SolidGraphic</string>
 		<key>ID</key>
@@ -38,7 +38,7 @@
 	<key>CanvasOrigin</key>
 	<string>{0, 0}</string>
 	<key>CanvasSize</key>
-	<string>{864, 864}</string>
+	<string>{864, 828}</string>
 	<key>ColumnAlign</key>
 	<integer>1</integer>
 	<key>ColumnSpacing</key>
@@ -53,6 +53,215 @@
 	<integer>8</integer>
 	<key>GraphicsList</key>
 	<array>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>294</integer>
+			<key>OrthogonalBarAutomatic</key>
+			<true/>
+			<key>OrthogonalBarPoint</key>
+			<string>{0, 0}</string>
+			<key>OrthogonalBarPosition</key>
+			<real>-1</real>
+			<key>Points</key>
+			<array>
+				<string>{763.37124633789062, 17.189752898978071}</string>
+				<string>{736.37124633789062, 17.687179476883813}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HopLines</key>
+					<true/>
+					<key>HopType</key>
+					<integer>1</integer>
+					<key>Legacy</key>
+					<true/>
+					<key>LineType</key>
+					<integer>2</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>293</integer>
+			<key>OrthogonalBarAutomatic</key>
+			<true/>
+			<key>OrthogonalBarPoint</key>
+			<string>{0, 0}</string>
+			<key>OrthogonalBarPosition</key>
+			<real>-1</real>
+			<key>Points</key>
+			<array>
+				<string>{772.37124633789062, 17.189752898978071}</string>
+				<string>{808.37124633789062, 17.189752898978071}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HopLines</key>
+					<true/>
+					<key>HopType</key>
+					<integer>1</integer>
+					<key>Legacy</key>
+					<true/>
+					<key>LineType</key>
+					<integer>2</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>292</integer>
+			<key>OrthogonalBarAutomatic</key>
+			<true/>
+			<key>OrthogonalBarPoint</key>
+			<string>{0, 0}</string>
+			<key>OrthogonalBarPosition</key>
+			<real>-1</real>
+			<key>Points</key>
+			<array>
+				<string>{736.37124633789062, 44.810249328613281}</string>
+				<string>{808.37124633789062, 45.810249328613281}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HopLines</key>
+					<true/>
+					<key>HopType</key>
+					<integer>1</integer>
+					<key>Legacy</key>
+					<true/>
+					<key>LineType</key>
+					<integer>2</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>ID</key>
+			<integer>291</integer>
+			<key>OrthogonalBarAutomatic</key>
+			<true/>
+			<key>OrthogonalBarPoint</key>
+			<string>{0, 0}</string>
+			<key>OrthogonalBarPosition</key>
+			<real>-1</real>
+			<key>Points</key>
+			<array>
+				<string>{736.37124633789062, 32.000000727952589}</string>
+				<string>{809.99997853023308, 31.000000727952589}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>0</string>
+					<key>HopLines</key>
+					<true/>
+					<key>HopType</key>
+					<integer>1</integer>
+					<key>Legacy</key>
+					<true/>
+					<key>LineType</key>
+					<integer>2</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{648, 9}, {126, 45}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>286</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Align</key>
+				<integer>0</integer>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 Power rails\
+Ground plane\
+Signal lines}</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Class</key>
 			<string>LineGraphic</string>
@@ -81,6 +290,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -396,6 +614,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -443,6 +670,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -706,7 +942,7 @@
 			<key>OrthogonalBarPoint</key>
 			<string>{0, 0}</string>
 			<key>OrthogonalBarPosition</key>
-			<real>97.250198364257812</real>
+			<real>-1</real>
 			<key>Points</key>
 			<array>
 				<string>{710.14000502110378, 219.49960048684477}</string>
@@ -718,6 +954,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -730,8 +975,6 @@
 					<integer>2</integer>
 					<key>TailArrow</key>
 					<string>0</string>
-					<key>Width</key>
-					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -876,7 +1119,7 @@
 			<key>OrthogonalBarPoint</key>
 			<string>{0, 0}</string>
 			<key>OrthogonalBarPosition</key>
-			<real>26.75</real>
+			<real>27.75</real>
 			<key>Points</key>
 			<array>
 				<string>{657.5, 477}</string>
@@ -887,6 +1130,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -899,8 +1151,6 @@
 					<integer>2</integer>
 					<key>TailArrow</key>
 					<string>0</string>
-					<key>Width</key>
-					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -1028,6 +1278,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -1075,6 +1334,15 @@
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -1813,6 +2081,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -1861,6 +2138,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2407,6 +2693,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2453,6 +2748,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2500,6 +2804,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2688,6 +3001,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -2795,6 +3117,15 @@ Module}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -3047,6 +3378,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -3090,6 +3430,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -3133,6 +3482,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -3176,6 +3534,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -3219,6 +3586,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -3876,6 +4252,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -3916,6 +4301,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -3956,6 +4350,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -3996,6 +4399,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>HopLines</key>
@@ -5111,6 +5523,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5142,16 +5563,25 @@ Resistor}</string>
 			<key>OrthogonalBarPoint</key>
 			<string>{0, 0}</string>
 			<key>OrthogonalBarPosition</key>
-			<real>15.001291275024414</real>
+			<real>13.001291275024414</real>
 			<key>Points</key>
 			<array>
-				<string>{45.683907049089392, 216.49870901513034}</string>
-				<string>{48.852092950910645, 260.50129098486963}</string>
+				<string>{45.683907049089385, 216.49870901513034}</string>
+				<string>{48.85209295091061, 260.50129098486963}</string>
 			</array>
 			<key>Style</key>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5160,6 +5590,8 @@ Resistor}</string>
 					<integer>2</integer>
 					<key>TailArrow</key>
 					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -5274,6 +5706,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5656,13 +6097,22 @@ Resistor}</string>
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{688.26671054692861, 144.49993060493921}</string>
-				<string>{687.98342677889673, 161.50006945279654}</string>
+				<string>{688.2666696514334, 144.4999305503685}</string>
+				<string>{687.98333622197288, 161.5000694496328}</string>
 			</array>
 			<key>Style</key>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5705,6 +6155,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5736,7 +6195,7 @@ Resistor}</string>
 			<key>OrthogonalBarPoint</key>
 			<string>{0, 0}</string>
 			<key>OrthogonalBarPosition</key>
-			<real>1.823223352432251</real>
+			<real>-1</real>
 			<key>Points</key>
 			<array>
 				<string>{144.35355338008725, 117.35355338008723}</string>
@@ -5747,6 +6206,15 @@ Resistor}</string>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>1</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -5755,6 +6223,8 @@ Resistor}</string>
 					<integer>2</integer>
 					<key>TailArrow</key>
 					<string>0</string>
+					<key>Width</key>
+					<real>3</real>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -5904,13 +6374,22 @@ DIN Socket}</string>
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{795.97899040983657, 161.50007061490697}</string>
-				<string>{796.26470706916291, 144.49992938509303}</string>
+				<string>{795.97899040983373, 161.50007061490697}</string>
+				<string>{796.26470706915848, 144.49992938509303}</string>
 			</array>
 			<key>Style</key>
 			<dict>
 				<key>stroke</key>
 				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>1</string>
+						<key>g</key>
+						<string>0.501961</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
 					<key>HeadArrow</key>
 					<string>0</string>
 					<key>Legacy</key>
@@ -6051,7 +6530,7 @@ Flame Effect}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{810, 9}, {45, 45}}</string>
+			<string>{{405, 9}, {45, 45}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -6235,7 +6714,7 @@ Flame Effect}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-04 01:27:28 +0000</string>
+	<string>2017-04-04 19:33:20 +0000</string>
 	<key>Modifier</key>
 	<string>Linenoise</string>
 	<key>NotesVisible</key>
@@ -6330,15 +6809,15 @@ Flame Effect}</string>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-57, 0}, {978, 692}}</string>
+		<string>{{-38, 0}, {940.38464987771874, 665.38463979077846}}</string>
 		<key>Zoom</key>
-		<real>1</real>
+		<real>1.0399999618530273</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Canvas 1</string>
-				<real>1</real>
-				<real>1</real>
+				<real>1.0399999618530273</real>
+				<real>0.93000000715255737</real>
 			</array>
 		</array>
 	</dict>
