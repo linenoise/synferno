@@ -1,8 +1,14 @@
 # Synferno
 
-The code that allows Tautology's flame effects to be controlled by MIDI
+This codebase contains the software and hardware designs that allow Tautology's flame effects to be controlled by MIDI devices. Synferno is an group of flame effects that are sequenced, synchronized, and controlled by DJs and other electronic musicians. Beats and heats.
 
-# Console Interface
+There are two types of components in this system: One console and one or more flame effects.
+
+# Console
+
+The synferno console is the device that sits in the DJ booth and allows the performer to synchronize her hardware to the flame effects.
+
+## Console Interface
 
 The back of the console has six interface components:
 
@@ -26,11 +32,11 @@ The top of the console has nine interface components:
 
 ![Synferno Console Interface Layout](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/Synferno%20Console%20Interface%20Layout.png)
 
-# Block Diagram
+## Console Block Diagram
 
 ![Synferno Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/block_diagram_v20170403.png)
 
-# Bill of Materials
+## Console Bill of Materials
 
 The following parts are required to build the Synferno console.
 
@@ -66,6 +72,26 @@ The following parts are required to build the Synferno console.
 | Logic     | 1x       | Signaling Connector Wire | [Spool Blue Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
 | Fire      | 4x       | SpeakOn Port | [NL2MP SpeakOn Port](https://www.amazon.com/Neutrik-Chassis-Speakon-Connector-NL2MP/dp/B00067JS3M/)
 | Fire      | 2x       | SpeakOn Cable | [SpeakOn Cable](https://www.amazon.com/Ignite-Pro-Speakon-Gauge-Speaker/dp/B01CBC5ZE0/)
+
+# Flame Effects
+
+The design of the flame effects closely parallels the design of [Mike Dodds' *Amplifire* design](https://github.com/the-magister/amplifire). Please reference his codebase for hardware designs of the flame effects.
+
+When the flame effects are being used as *Synferno* accumulators, they are connected as with any other sound system component: with locking, interference-resistant SpeakOn cables. When the flame effects are being used as *Amplifire* accumulators, they are controlled via WiFi and infrared sensors.
+
+The default configuration of Synferno is to setup one flame effect each on the right and left channels of the controller. Each flame effect has pass-through SpeakOn port, however, so multiple flame effects may also be connected in series.
+
+## Flame Effect Bill of Materials
+
+* 55 gallon drum
+* Milled steel, welding consumables
+* 5 gallon propane tank
+* Solenoid
+* Pilot
+* Regulator
+* Misc plumbing
+* 50’ propane line
+* 2x SpeakOn NL2MP ports
 
 # References
 
