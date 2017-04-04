@@ -85,7 +85,7 @@ When the flame effects are being used as *Synferno* accumulators, they are conne
 
 ## Flame Effect Block Diagram
 
-![Flame Effect Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/accumulator_diagram.png)
+![Flame Effect Block Diagram](https://github.com/linenoise/synferno/blob/master/docs/diagrams/Synferno%20Block%20Diagram.png)
 
 ## Flame Effect Bill of Materials
 
