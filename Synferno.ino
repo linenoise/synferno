@@ -63,15 +63,19 @@ void syncInterfaces() {
 	// Check to see whether the arming switch is engaged (HIGH or LOW)
 	if (digitalRead(ARMING_SWITCH_PIN) == HIGH) {
 		armed = true;
+		digitalWrite(ARM_LED_PIN, HIGH);		
 	} else {
 		armed = false;
+		digitalWrite(ARM_LED_PIN, LOW);		
 	}
 
 	// Check to see whether we're manually firing (HIGH or LOW)
 	if (digitalRead(MANUAL_FIRE_SWITCH_PIN) == HIGH) {
 		manually_firing = true;
+		digitalWrite(FIRE_LED_PIN, HIGH);		
 	} else {
 		manually_firing = false;
+		digitalWrite(FIRE_LED_PIN, LOW);		
 	}
 
 	// Get our current calibration value (0..1023)
