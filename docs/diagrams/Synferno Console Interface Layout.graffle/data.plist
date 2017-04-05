@@ -804,7 +804,7 @@ Lock}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{270, 162}, {405, 126}}</string>
+			<string>{{324, 162}, {405, 126}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1455,7 +1455,7 @@ Lock}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{783, 243}, {36, 36}}</string>
+			<string>{{252, 243}, {36, 36}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1503,7 +1503,7 @@ Lock}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{711, 216}, {54, 63}}</string>
+			<string>{{765, 216}, {54, 63}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1812,7 +1812,7 @@ Lock}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{693, 162}, {144, 126}}</string>
+			<string>{{747, 162}, {90, 126}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1859,7 +1859,7 @@ Lock}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{54, 162}, {198, 126}}</string>
+			<string>{{54, 162}, {252, 126}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -2028,7 +2028,7 @@ Lock}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-03 21:56:24 +0000</string>
+	<string>2017-04-05 00:37:10 +0000</string>
 	<key>Modifier</key>
 	<string>Linenoise</string>
 	<key>NotesVisible</key>
@@ -2123,7 +2123,7 @@ Lock}</string>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{31.443298041649513, 219.07215848690231}, {1023.7113100117365, 713.4020408138183}}</string>
+		<string>{{30.412370237005266, 147.42267606412722}, {1023.7113100117367, 713.40204081381842}}</string>
 		<key>Zoom</key>
 		<real>0.97000002861022949</real>
 		<key>ZoomValues</key>
