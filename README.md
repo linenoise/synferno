@@ -58,7 +58,8 @@ The following parts are required to build the Synferno console.
 | MIDI      | 1x       | MIDI DIN Socket | [57PC5F DIN connector](http://www.mouser.com/ProductDetail/Switchcraft/57PC5F/?qs=sGAEpiMZZMtAYTMy7wxAr0y4uKaR6FokQ9OyYICcpew%3d) |
 | MIDI      | 2x       | 220 Ohm Resistor | [220 Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OY221KE/?qs=sGAEpiMZZMtlubZbdhIBIMnBmbYwsLxH0milUae1tMQ%3d) |
 | MIDI      | 1x       | 4.7 Ohm Resistor | [4.7k Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OX472KE/?qs=sGAEpiMZZMsPqMdJzcrNwk%2fg3DPSHRNzqdU6hd7M%2fPE%3d) |
-| MIDI      | 3x       | 1N914 Diode | [1N914 Diode](http://www.mouser.com/ProductDetail/Fairchild-Semiconductor/1N914/?qs=NSEUUqpg2uCfNuQFcxVZsA%3d%3d) |
+| MIDI      | 1x       | 1N914 Diode | [1N914 Diode](http://www.mouser.com/ProductDetail/Fairchild-Semiconductor/1N914/?qs=NSEUUqpg2uCfNuQFcxVZsA%3d%3d) |
+| MIDI      | 2x       | 1N4001 Diode | [1N914 Diode](http://www.mouser.com/ProductDetail/Taiwan-Semiconductor/1N4001/?qs=sGAEpiMZZMuMAfj%252bWfX4nAIxm%252bOcj%252b2l) |
 | MIDI      | 1x       | 6N138 Optocoupler | [6N138 Optocoupler](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N138/?qs=sGAEpiMZZMtd3yBnp8bAgBFyizqDgEBJrkPNUPogu6s%3d) |
 | Status    | 5x       | 1k Ohm Resistor | [1k Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OX102KE/?qs=sGAEpiMZZMsPqMdJzcrNwrKLa5kaGLxISs%2fpJlieb%252bA%3d) |
 | Status    | 1x       | Blue Power LED | [Blue LED](https://www.radioshack.com/products/10mm-blue-led-lamp) |

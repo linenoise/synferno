@@ -122,7 +122,7 @@
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{693.80766920850931, 278.90510106828003}</string>
+				<string>{695.76925095235777, 278.89851181164545}</string>
 				<string>{709.95541151198927, 278.84616524573454}</string>
 			</array>
 			<key>Style</key>
@@ -790,7 +790,7 @@
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{641.8077190272669, 278.90764903623676}</string>
+				<string>{640.76925742997844, 278.90334780384256}</string>
 				<string>{624.50002430035602, 278.8461757690277}</string>
 			</array>
 			<key>Style</key>
@@ -904,12 +904,12 @@
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 1N914 Diode}</string>
+\f0\fs24 \cf0 1N4001 Diode}</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{642.30771586739888, 260.99999544324248}, {50.999956676945885, 36}}</string>
+			<string>{{641.26925436420674, 260.99998608848733}, {54, 36}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -933,7 +933,7 @@
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 1N914 Diode}</string>
+\f0\fs24 \cf0 1N4001 Diode}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -6627,8 +6627,8 @@ Resistor}</string>
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{688.2666660507258, 144.49993055036848}</string>
-				<string>{687.98332824892009, 161.50006944963152}</string>
+				<string>{688.26666604589866, 144.49993055036848}</string>
+				<string>{687.98332823823125, 161.50006944963152}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -7207,7 +7207,7 @@ Flame Effect}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-05 22:24:13 +0000</string>
+	<string>2017-04-05 22:53:03 +0000</string>
 	<key>Modifier</key>
 	<string>Linenoise</string>
 	<key>NotesVisible</key>
