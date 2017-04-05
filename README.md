@@ -52,12 +52,13 @@ The following parts are required to build the Synferno console.
 | Power     | 1x       | Locking Power Cable | [NEMA5-15 IL13-US1-SVT-3100-183](http://www.mouser.com/ProductDetail/Schaffner/IL13-US1-SVT-3100-183/?qs=sGAEpiMZZMvXcJVS4l7FPzCKqis1WRpbesAGrSNHj1w%3d) |
 | Power     | 1x       | Power Socket | [IEC Socket](http://www.mouser.com/ProductDetail/Schurter/62002300/?qs=sGAEpiMZZMvh4ezHM5rsUjbMf3rMlzcg3muYRtLA8Pw%3d) |
 | Power     | 1x       | Power Switch | [Rocker Switch](http://www.mouser.com/ProductDetail/ZF/SRB22A2FBBNN/?qs=sGAEpiMZZMt%252bZbscA2DaEkUexJYfg5jP) |
-| Power     | 1x       | Power Supply | [VCZHS DC 5V 10A Universal Regulated Switching Power Supply](https://smile.amazon.com/VCZHS-Universal-Regulated-Switching-Computer/dp/B019P1HGME/ref=sr_1_5?ie=UTF8&qid=1491256840&sr=8-5&keywords=5v+power+supply) |
+| Power     | 1x       | 5v Power Supply | [5V/2A power supply](https://www.amazon.com/iMBAPrice-Adapter-Listed-Supply-5-Feet/dp/B00GUO5WUI/) |
+| Power     | 1x       | 12v Power Supply | [Intocircuit LCD 60W 12V 5A Adapter](https://www.amazon.com/gp/product/B0023Y9EQC/) |
 | MIDI      | 1x       | MIDI Cable | [Hosa MID-305BK 5-Pin DIN to 5-Pin DIN MIDI Cable](https://smile.amazon.com/Hosa-MID-305BK-5-Pin-MIDI-Cable/dp/B000068NTU/ref=sr_1_2?ie=UTF8&qid=1491257019&sr=8-2&keywords=MIDI+cable) |
 | MIDI      | 1x       | MIDI DIN Socket | [57PC5F DIN connector](http://www.mouser.com/ProductDetail/Switchcraft/57PC5F/?qs=sGAEpiMZZMtAYTMy7wxAr0y4uKaR6FokQ9OyYICcpew%3d) |
 | MIDI      | 2x       | 220 Ohm Resistor | [220 Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OY221KE/?qs=sGAEpiMZZMtlubZbdhIBIMnBmbYwsLxH0milUae1tMQ%3d) |
 | MIDI      | 1x       | 4.7 Ohm Resistor | [4.7k Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OX472KE/?qs=sGAEpiMZZMsPqMdJzcrNwk%2fg3DPSHRNzqdU6hd7M%2fPE%3d) |
-| MIDI      | 1x       | 1N914 Diode | [1N914 Diode](http://www.mouser.com/ProductDetail/Fairchild-Semiconductor/1N914/?qs=NSEUUqpg2uCfNuQFcxVZsA%3d%3d) |
+| MIDI      | 3x       | 1N914 Diode | [1N914 Diode](http://www.mouser.com/ProductDetail/Fairchild-Semiconductor/1N914/?qs=NSEUUqpg2uCfNuQFcxVZsA%3d%3d) |
 | MIDI      | 1x       | 6N138 Optocoupler | [6N138 Optocoupler](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N138/?qs=sGAEpiMZZMtd3yBnp8bAgBFyizqDgEBJrkPNUPogu6s%3d) |
 | Status    | 5x       | 1k Ohm Resistor | [1k Ohm Resistor](http://www.mouser.com/ProductDetail/Ohmite/OX102KE/?qs=sGAEpiMZZMsPqMdJzcrNwrKLa5kaGLxISs%2fpJlieb%252bA%3d) |
 | Status    | 1x       | Blue Power LED | [Blue LED](https://www.radioshack.com/products/10mm-blue-led-lamp) |
@@ -67,7 +68,8 @@ The following parts are required to build the Synferno console.
 | Status    | 1x       | Red Fire LED | [Red LED](https://www.radioshack.com/products/5mm-red-led-1) |
 | Logic     | 1x       | Arduino Uno | [Arduino Uno](https://smile.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/) |
 | Logic     | 1x       | 4 Channel Relay Module | [SainSmart 20-018-901](https://www.sainsmart.com/sainsmart-4-channel-5v-solid-state-relay-module-board-omron-ssr-avr-dsp-arduino.html) |
-| Logic     | 1x       | Power Rail Connector Wire | [Spool Red Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
+| Logic     | 1x       | 5V Power Rail Connector Wire | [Spool Red Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
+| Logic     | 1x       | 12V Power Rail Connector Wire | [Spool Yellow Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
 | Logic     | 1x       | Ground Plane Connector Wire | [Spool Black Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
 | Logic     | 1x       | Signaling Connector Wire | [Spool Blue Connector Wire](https://smile.amazon.com/GS-Powers-Power-Primary-Remote/dp/B01NCSJZWM/) |
 | Fire      | 4x       | SpeakOn Port | [NL2MP SpeakOn Port](https://www.amazon.com/Neutrik-Chassis-Speakon-Connector-NL2MP/dp/B00067JS3M/)
