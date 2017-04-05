@@ -34,7 +34,7 @@ The top of the console has nine interface components:
 
 ## Console Block Diagram
 
-![Synferno Block Diagram](https://raw.githubusercontent.com/linenoise/synferno/master/docs/diagrams/block_diagram_v20170403.png)
+![Synferno Block Diagram](https://github.com/linenoise/synferno/blob/master/docs/diagrams/Synferno%20Block%20Diagram.png)
 
 ## Console Bill of Materials
 
@@ -87,7 +87,7 @@ When the flame effects are being used as *Synferno* accumulators, they are conne
 
 ## Flame Effect Block Diagram
 
-![Flame Effect Block Diagram](https://github.com/linenoise/synferno/blob/master/docs/diagrams/Synferno%20Block%20Diagram.png)
+![Flame Effect Block Diagram](https://github.com/linenoise/synferno/blob/master/docs/diagrams/accumulator_diagram.png)
 
 ## Flame Effect Bill of Materials
 
