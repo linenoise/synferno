@@ -18,7 +18,6 @@ byte midiChannel;
 byte midiCommand;
 
 // Input buffers
-bool enabled = false;          // Key Lock
 bool armed = false;            // Arming Switch
 bool manually_firing = false;  // Big Red Button
 int calibration_delay = 0;    // Calibration (knob) pot
@@ -38,13 +37,6 @@ unsigned int total_delay = 0;
 
 void syncInterfaces() {
 	
-	// Check to see whether the key lock is engaged (HIGH or LOW)
-	if (digitalRead(KEY_LOCK_PIN) == HIGH) {
-		enabled = true;
-	} else {
-		enabled = false;
-	}
-
 	// Check to see whether the arming switch is engaged (HIGH or LOW)
 	if (digitalRead(ARMING_SWITCH_PIN) == HIGH) {
 		armed = true;
@@ -127,7 +119,7 @@ void processMidi() {
 // -----------------------------------------------------------------------------
 
 void fireControl() {
-	if ((enabled == true) && (armed == true)) {
+	if (armed == true) {
 		digitalWrite(FIRE_LED_PIN, HIGH);
 		digitalWrite(FIRE_LEFT_CHANNEL_PIN, HIGH);
 		digitalWrite(FIRE_RIGHT_CHANNEL_PIN, HIGH);
@@ -145,7 +137,7 @@ void fireControl() {
 // -----------------------------------------------------------------------------
 
 void processManualFire() {
-	if ((enabled == true) && (armed == false)){
+	if (armed == false){
 		if(manually_firing == true) {
 			digitalWrite(FIRE_LED_PIN, HIGH);
 			digitalWrite(FIRE_LEFT_CHANNEL_PIN, HIGH);
@@ -172,7 +164,6 @@ void setup() {
 
     pinMode(ARMING_SWITCH_PIN, INPUT);
     pinMode(MANUAL_FIRE_SWITCH_PIN, INPUT);
-		pinMode(KEY_LOCK_PIN, INPUT);
 
 		Timer1.initialize();
 		Timer1.attachInterrupt(fireControl);
