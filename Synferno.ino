@@ -49,10 +49,8 @@ void syncInterfaces() {
 	// Check to see whether we're manually firing (HIGH or LOW)
 	if (digitalRead(MANUAL_FIRE_SWITCH_PIN) == HIGH) {
 		manually_firing = true;
-		digitalWrite(FIRE_LED_PIN, HIGH);		
 	} else {
 		manually_firing = false;
-		digitalWrite(FIRE_LED_PIN, LOW);		
 	}
 
 	// Get our current calibration value (0..1023)
