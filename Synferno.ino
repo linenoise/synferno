@@ -11,23 +11,17 @@
 // MIDI buffer and counter
 SoftwareSerial mySerial(MIDI_RX_PIN, MIDI_TX_PIN);
 unsigned clockCounter = 0;
-bool inputSynced = false;
-const int midiSendDelay = 100; // give MIDI-device a short time to "digest" MIDI messages
 byte midiByte;
 byte midiChannel;
 byte midiCommand;
 
 // Input buffers
 bool armed = false;            // Arming Switch
-bool manually_firing = false;  // Big Red Button
-int calibration_delay = 0;    // Calibration (knob) pot
-int fire_duration = 0;        // Duration (slider) pot
-
-// Time synchronization
-unsigned long this_beat_millis = 0;
-unsigned long last_beat_millis = 0;
-unsigned int inter_beat_period = 0;
-unsigned int total_delay = 0;
+bool fire = false;             // Whether we're currently triggering fire
+int calibration_delay = 0;     // Calibration (knob) pot
+int fire_duration = 0;         // Duration (slider) pot
+unsigned int fire_on_at = 0;   // Which of the 24 pulses per beat we turn on at
+unsigned int fire_off_at = 0;  // Which of the 24 pulses per beat we turn off at
 
 
 // -----------------------------------------------------------------------------
@@ -36,29 +30,40 @@ unsigned int total_delay = 0;
 // -----------------------------------------------------------------------------
 
 void syncInterfaces() {
-	
-	// Check to see whether the arming switch is engaged (HIGH or LOW)
-	if (digitalRead(ARMING_SWITCH_PIN) == HIGH) {
-		armed = true;
-		digitalWrite(ARM_LED_PIN, HIGH);		
-	} else {
-		armed = false;
-		digitalWrite(ARM_LED_PIN, LOW);		
-	}
+  
+  // Check to see whether the arming switch is engaged (HIGH or LOW)
+  if (digitalRead(ARMING_SWITCH_PIN) == HIGH) {
+    armed = true;
+    digitalWrite(ARM_LED_PIN, HIGH);
+  } else {
+    armed = false;
+    digitalWrite(ARM_LED_PIN, LOW);   
+  }
 
-	// Check to see whether we're manually firing (HIGH or LOW)
-	if (digitalRead(MANUAL_FIRE_SWITCH_PIN) == HIGH) {
-		manually_firing = true;
-	} else {
-		manually_firing = false;
-	}
+  // Are we currently making fire?
+  if (fire) {
+    digitalWrite(FIRE_LED_PIN, HIGH);
+    digitalWrite(FIRE_RELAY_PIN, HIGH);
+  } else {
+    digitalWrite(FIRE_LED_PIN, LOW);
+    digitalWrite(FIRE_RELAY_PIN, LOW);
+  }
 
-	// Get our current calibration value (0..1023)
-	calibration_delay = analogRead(CALIBRATION_POT_PIN);
+  // Get our current calibration value (0..24)
+  calibration_delay = (int) (analogRead(CALIBRATION_POT_PIN) / 45);
 
-	// Get our current flame duration (0..1023)
-	fire_duration = analogRead(DURATION_POT_PIN) / 2;
-	
+  // Get our current flame duration (0..24)
+  fire_duration = (int) (analogRead(DURATION_POT_PIN) / 45);
+
+  // Figure out when during a 24-count beat cycle we turn the flame on and off
+  fire_on_at = 24 - calibration_delay;
+  if (fire_on_at == 24){
+    fire_on_at = 0;
+  }
+  fire_off_at = fire_on_at + fire_duration;
+  if (fire_off_at > 24){
+    fire_off_at = fire_off_at - 24;  
+  }
 }
 
 
@@ -67,85 +72,41 @@ void syncInterfaces() {
 // -----------------------------------------------------------------------------
 
 void processMidi() {
-    if (mySerial.available() > 0) {
+  if (mySerial.available() > 0) {
 
     midiByte = mySerial.read();
     midiChannel = midiByte & B00001111;
     midiCommand = midiByte & B11110000;
-
-		// Sync to the downbeat when the DJ starts or continues
-    if ((midiByte == MIDI_START) || (midiByte == MIDI_CONTINUE)) {
-			clockCounter = 0;
-			Timer1.resume();
-			inputSynced = true;
-			digitalWrite(SYNC_LED_PIN, HIGH);
-		}
-
-		// Stop when the DJ stops
-    if (midiByte == MIDI_STOP) {
-			Timer1.stop();
-			inputSynced = false;
-			digitalWrite(SYNC_LED_PIN, LOW);
-		}
-		
-		// We get 24 clock ticks per beat. Wait for it...
-        if (midiByte == MIDI_CLOCK) {
-			if (clockCounter < 24) {
-				clockCounter = clockCounter + 1;
-			} else {
-				clockCounter = 0;
-			}
-        }
-
-		// When we're on a beat, calculate our period based on millis since the last beat
-		if (inputSynced == true && clockCounter == 0) {
-			this_beat_millis = millis();
-			if(last_beat_millis > 0){
-				inter_beat_period = this_beat_millis - last_beat_millis;
-				total_delay = inter_beat_period - calibration_delay;
-				Timer1.setPeriod(inter_beat_period);
-				Timer1.restart();
-			}
-			last_beat_millis = this_beat_millis;
-		}
+    
+    // We get 24 clock ticks per beat. 
+    if (midiByte == MIDI_CLOCK) {
+      if (clockCounter <= 22) {
+        clockCounter = clockCounter + 1;
+      } else {
+        clockCounter = 0;
+      }
     }
-}
 
+    // When we're on a beat. Blink.
+    if (clockCounter == 0) {
+      digitalWrite(SYNC_LED_PIN, HIGH);
+    }
+    if (clockCounter == 1) {
+      digitalWrite(SYNC_LED_PIN, LOW);
+    }
 
-// -----------------------------------------------------------------------------
-// fireControl() runs once per beat through Timer1
-// -----------------------------------------------------------------------------
-
-void fireControl() {
-	if (armed == true) {
-		digitalWrite(FIRE_LED_PIN, HIGH);
-		digitalWrite(FIRE_LEFT_CHANNEL_PIN, HIGH);
-		digitalWrite(FIRE_RIGHT_CHANNEL_PIN, HIGH);
-		delay(fire_duration); // DIRTY DIRTY BLOCKING HACK FIXME
-		digitalWrite(FIRE_LED_PIN, LOW);
-		digitalWrite(FIRE_LEFT_CHANNEL_PIN, LOW);
-		digitalWrite(FIRE_RIGHT_CHANNEL_PIN, LOW);
-	}
-}
-
-
-// -----------------------------------------------------------------------------
-// processManualFire() will run the poofers if the system is NOT armed but 
-//   the manual fire button is pressed. Either or, not both.
-// -----------------------------------------------------------------------------
-
-void processManualFire() {
-	if (armed == false){
-		if(manually_firing == true) {
-			digitalWrite(FIRE_LED_PIN, HIGH);
-			digitalWrite(FIRE_LEFT_CHANNEL_PIN, HIGH);
-			digitalWrite(FIRE_RIGHT_CHANNEL_PIN, HIGH);
-		} else {
-			digitalWrite(FIRE_LED_PIN, LOW);
-			digitalWrite(FIRE_LEFT_CHANNEL_PIN, LOW);
-			digitalWrite(FIRE_RIGHT_CHANNEL_PIN, LOW);
-		}
-	}
+    // If we're making fire, do that thing.
+    if (armed) {
+      if (clockCounter == fire_on_at) {
+        fire = true;
+      }
+      if (clockCounter == fire_off_at) {
+        fire = false;
+      }
+    } else {
+      fire = false;
+    }
+  }
 }
 
 
@@ -154,20 +115,40 @@ void processManualFire() {
 // -----------------------------------------------------------------------------
 
 void setup() {
+
+    // Initialize the Sync LED
     pinMode(SYNC_LED_PIN, OUTPUT);
+    digitalWrite(SYNC_LED_PIN, LOW);
+    digitalWrite(SYNC_LED_PIN, HIGH);
+    delay(50);
+    digitalWrite(SYNC_LED_PIN, LOW);
+    delay(50);
+    
+    // Initialize the Arm LED
     pinMode(ARM_LED_PIN, OUTPUT);
+    digitalWrite(ARM_LED_PIN, LOW);
+    digitalWrite(ARM_LED_PIN, HIGH);
+    delay(50);
+    digitalWrite(ARM_LED_PIN, LOW);
+    delay(50);
+
+    // Initialize the Fire LED
     pinMode(FIRE_LED_PIN, OUTPUT);
-    pinMode(FIRE_LEFT_CHANNEL_PIN, OUTPUT);
-    pinMode(FIRE_RIGHT_CHANNEL_PIN, OUTPUT);
+    digitalWrite(FIRE_LED_PIN, LOW);
+    digitalWrite(FIRE_LED_PIN, HIGH);
+    delay(50);
+    digitalWrite(FIRE_LED_PIN, LOW);
+    delay(50);
 
+    // Initialize the arming switch and fire channels
     pinMode(ARMING_SWITCH_PIN, INPUT);
-    pinMode(MANUAL_FIRE_SWITCH_PIN, INPUT);
+    pinMode(FIRE_RELAY_PIN, OUTPUT);
 
-		Timer1.initialize();
-		Timer1.attachInterrupt(fireControl);
-
+    // give MIDI-device a short time to "digest" MIDI messages
     mySerial.begin(31250);
-    delay(midiSendDelay);
+    delay(100);
+    
+    Serial.begin(115200);
 }
 
 
@@ -176,9 +157,6 @@ void setup() {
 // -----------------------------------------------------------------------------
 
 void loop() {
-	syncInterfaces();
-	processMidi();
-	processManualFire();
+  syncInterfaces();
+  processMidi();
 }
-
-
