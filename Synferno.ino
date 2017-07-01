@@ -41,7 +41,7 @@ void syncInterfaces() {
   }
 
   // Are we currently making fire?
-  if (fire) {
+  if (armed && fire) {
     digitalWrite(FIRE_LED_PIN, HIGH);
     digitalWrite(FIRE_RELAY_PIN, HIGH);
   } else {
@@ -49,11 +49,11 @@ void syncInterfaces() {
     digitalWrite(FIRE_RELAY_PIN, LOW);
   }
 
-  // Get our current calibration value (0..24)
-  calibration_delay = (int) (analogRead(CALIBRATION_POT_PIN) / 45);
+  // Get our current calibration value (0..23)
+  calibration_delay = (int) map(analogRead(CALIBRATION_POT_PIN), 0, 1023, 0, 23);
 
-  // Get our current flame duration (0..24)
-  fire_duration = (int) (analogRead(DURATION_POT_PIN) / 45);
+  // Get our current flame duration (0..23)
+  fire_duration = (int) map(analogRead(DURATION_POT_PIN), 0, 1023, 0, 23);
 
   // Figure out when during a 24-count beat cycle we turn the flame on and off
   fire_on_at = 24 - calibration_delay;
@@ -117,24 +117,24 @@ void processMidi() {
 void setup() {
 
     // Initialize the Sync LED
-    pinMode(SYNC_LED_PIN, OUTPUT);
     digitalWrite(SYNC_LED_PIN, LOW);
+    pinMode(SYNC_LED_PIN, OUTPUT);
     digitalWrite(SYNC_LED_PIN, HIGH);
     delay(50);
-    digitalWrite(SYNC_LED_PIN, LOW);
+    digitalWrite(SYNC_LED_PIN, LOW);s
     delay(50);
     
     // Initialize the Arm LED
-    pinMode(ARM_LED_PIN, OUTPUT);
     digitalWrite(ARM_LED_PIN, LOW);
+    pinMode(ARM_LED_PIN, OUTPUT);
     digitalWrite(ARM_LED_PIN, HIGH);
     delay(50);
     digitalWrite(ARM_LED_PIN, LOW);
     delay(50);
 
     // Initialize the Fire LED
-    pinMode(FIRE_LED_PIN, OUTPUT);
     digitalWrite(FIRE_LED_PIN, LOW);
+    pinMode(FIRE_LED_PIN, OUTPUT);
     digitalWrite(FIRE_LED_PIN, HIGH);
     delay(50);
     digitalWrite(FIRE_LED_PIN, LOW);
@@ -142,13 +142,12 @@ void setup() {
 
     // Initialize the arming switch and fire channels
     pinMode(ARMING_SWITCH_PIN, INPUT);
+    digitalWrite(FIRE_RELAY_PIN, LOW);
     pinMode(FIRE_RELAY_PIN, OUTPUT);
 
     // give MIDI-device a short time to "digest" MIDI messages
     mySerial.begin(31250);
     delay(100);
-    
-    Serial.begin(115200);
 }
 
 
