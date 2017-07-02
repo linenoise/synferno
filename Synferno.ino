@@ -121,7 +121,7 @@ void setup() {
     pinMode(SYNC_LED_PIN, OUTPUT);
     digitalWrite(SYNC_LED_PIN, HIGH);
     delay(50);
-    digitalWrite(SYNC_LED_PIN, LOW);s
+    digitalWrite(SYNC_LED_PIN, LOW);
     delay(50);
     
     // Initialize the Arm LED
