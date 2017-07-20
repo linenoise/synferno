@@ -20,6 +20,8 @@ Solenoid fireLeft, fireRight;
 // Potentiometers
 #include "Potentiometer.h"
 Potentiometer duration, offset, frequency;
+#define FREQUENCY_SECTORS 5   // number of frequency options (keep odd so knob at 12:00 means default)
+#define FREQUENCY_DEVIATION 4 // multiplier (for max) and divisor (for min) of beats per poof (must be 1 through 10)
 
 // Fire button
 #include "Button.h"
@@ -46,7 +48,7 @@ void setup() {
   showDuration(duration.getSector());
   offset.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT);
   showOffset(offset.getSector());
-  frequency.begin(POT_PIN3, MIDI_CLOCKS_PER_BEAT);
+  frequency.begin(POT_PIN3, FREQUENCY_SECTORS);
   showFrequency(frequency.getSector());
 
   // buttons
@@ -66,7 +68,7 @@ void loop() {
   }
   if ( frequency.update() ) {
     // have a change in frequency
-    showFrequency(frequency.getSector());
+    showFrequency(map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, 0 - ((FREQUENCY_SECTORS -1) / 2), (FREQUENCY_SECTORS-1) / 2));
   }
 
   // 2. decode the MIDI situation
@@ -81,8 +83,11 @@ void loop() {
     // we have a MIDI signal to follow
     byte counter = midi.getCounter();
 
-    // how far back from the beat do we need to trigger the hardware?
-    byte fireOnAt = (MIDI_CLOCKS_PER_BEAT - offset.getSector()) % MIDI_CLOCKS_PER_BEAT;
+    // use frequency knob to adjust how long we wait between poofs (scale MIDI clock signals per beat)
+    byte clocksPerPoof = map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, FREQUENCY_DEVIATION * MIDI_CLOCKS_PER_BEAT, MIDI_CLOCKS_PER_BEAT / FREQUENCY_DEVIATION);
+
+    // how far back from the poof do we need to trigger the hardware?
+    byte fireOnAt = (clocksPerPoof - offset.getSector()) % clocksPerPoof;
     if ( counter == fireOnAt ) {
       // turn on the fire
       fireLeft.on();
@@ -90,14 +95,12 @@ void loop() {
     }
 
     // and when do we need to turn it off?
-    byte fireOffAt = (fireOnAt + duration.getSector()) % MIDI_CLOCKS_PER_BEAT;
+    byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
     if ( counter == fireOffAt ) {
       // turn off the fire
       fireLeft.off();
       fireRight.off();
     }
-
-    // TODO: 'frequency' knob.
 
     // report tick, noting we do this after the hardware-level update
     showMIDI(midi.getCounter());
@@ -278,8 +281,8 @@ void showOffset(byte count) {
   }
 }
 
-void showFrequency(byte count) {
-  static byte lastCount = 255;
+void showFrequency(int step) {
+  static int lastStep = 0;
   static boolean startup = true;
   const byte thisRow = 3;
 
@@ -288,9 +291,9 @@ void showFrequency(byte count) {
     showLabel(thisRow);
     startup = false;
   }
-  if ( lastCount != count ) {
-    lastCount = count;
-    showCounter(thisRow, 6, count);
+  if ( lastStep != step ) {
+    lastStep = step;
+    showCounter(thisRow, 6, step);
   }
 }
 
@@ -298,7 +301,7 @@ void showLabel(byte row) {
   oled.write(row, 0, true); // pad
 }
 
-void showCounter(byte row, byte col, byte counter) {
+void showCounter(byte row, byte col, int counter) {
   oled.buffer = String(counter);
   if ( oled.buffer.length() < 2 ) oled.buffer += " ";
   oled.write(row, col); // don't pad, place at a specific location
