@@ -68,7 +68,7 @@ void loop() {
   }
   if ( frequency.update() ) {
     // have a change in frequency
-    showFrequency(map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, 0 - ((FREQUENCY_SECTORS -1) / 2), (FREQUENCY_SECTORS-1) / 2);
+    showFrequency(map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, 0 - ((FREQUENCY_SECTORS -1) / 2), (FREQUENCY_SECTORS-1) / 2));
   }
 
   // 2. decode the MIDI situation
@@ -291,7 +291,7 @@ void showFrequency(int step) {
     showLabel(thisRow);
     startup = false;
   }
-  if ( lastFreq != step ) {
+  if ( lastStep != step ) {
     lastStep = step;
     showCounter(thisRow, 6, step);
   }
