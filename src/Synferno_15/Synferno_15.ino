@@ -101,7 +101,9 @@ void loop() {
 
     // and when do we need to turn it off?
     byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
-    if ( counter == fireOffAt ) {
+    byte fireOffAtAlt = (fireOnAt + duration.getSector() +1) % clocksPerPoof;
+    // if we miss a MIDI clock signal, don't want to leave the fire on.
+    if ( counter == fireOffAt || counter == fireOffAtAlt ) {
       // turn off the fire
       fireLeft.off();
       fireRight.off();
