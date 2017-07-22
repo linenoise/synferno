@@ -19,9 +19,8 @@ Solenoid fireLeft, fireRight;
 
 // Potentiometers
 #include "Potentiometer.h"
-Potentiometer duration, offset, frequency;
-#define FREQUENCY_SECTORS 5   // number of frequency options (keep odd so knob at 12:00 means default)
-#define FREQUENCY_DEVIATION 4 // multiplier (for max) and divisor (for min) of beats per poof (must be 1 through 10)
+Potentiometer duration, offset, frequency, options;
+#define NUM_OPTIONS 6
 
 // Fire button
 #include "Button.h"
@@ -44,12 +43,14 @@ void setup() {
   showFireRight(fireRight.getState());
 
   // knobs
-  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT);
+  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 360);
   showDuration(duration.getSector());
-  offset.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT);
+  offset.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
   showOffset(offset.getSector());
-  frequency.begin(POT_PIN3, FREQUENCY_SECTORS);
+  frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 553);
   showFrequency(frequency.getSector());
+  options.begin(POT_PIN4, NUM_OPTIONS, 14, 553);
+  showOptions(options.getSector());
 
   // buttons
   makeFireNow.begin(BUTTON_PIN1);
@@ -65,6 +66,10 @@ void loop() {
   if ( offset.update() ) {
     // have a change in offset
     showOffset(offset.getSector());
+  }  
+  if ( options.update() ) {
+    // have a change in options
+    showOptions(options.getSector());
   }
   if ( frequency.update() ) {
     // have a change in frequency
@@ -206,7 +211,7 @@ void showFireRight(boolean state) {
 void showMakeFireNow(boolean state) {
   static boolean lastState = !state;
   static boolean startup = true;
-  const byte thisRow = 4;
+  const byte thisRow = 5;
 
   if ( startup ) {
     oled.buffer = "MFN:  ";
@@ -294,6 +299,22 @@ void showFrequency(int step) {
   if ( lastStep != step ) {
     lastStep = step;
     showCounter(thisRow, 6, step);
+  }
+}
+
+void showOptions(byte count) {
+  static byte lastCount = 255;
+  static boolean startup = true;
+  const byte thisRow = 4;
+
+  if ( startup ) {
+    oled.buffer = "Opts:  ";
+    showLabel(thisRow);
+    startup = false;
+  }
+  if ( lastCount != count ) {
+    lastCount = count;
+    showCounter(thisRow, 6, count);
   }
 }
 

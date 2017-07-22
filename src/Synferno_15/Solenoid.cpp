@@ -1,6 +1,6 @@
 #include "Solenoid.h"
 
-void Solenoid::begin(byte pin, boolean fireValue=HIGH) {
+void Solenoid::begin(byte pin, boolean fireValue) {
   this->pin = pin;
   this->fireValue = fireValue;
 

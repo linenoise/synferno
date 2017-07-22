@@ -18,6 +18,9 @@
 
 #define MIDI_CLOCKS_PER_BEAT 24
 
+#define FREQUENCY_SECTORS 5   // number of frequency options (keep odd so knob at 12:00 means default)
+#define FREQUENCY_DEVIATION 4 // multiplier (for max) and divisor (for min) of beats per poof (must be 1 through 10)
+
 #define SIMULATE_MIDI 1
 #define SIMULATE_BPM 120.0
 
