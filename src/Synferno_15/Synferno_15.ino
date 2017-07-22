@@ -1,3 +1,4 @@
+
 // Compile for Arduino Nano
 
 #include <Streaming.h>
@@ -43,7 +44,7 @@ void setup() {
   showFireRight(fireRight.getState());
 
   // knobs
-  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 360);
+  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 355);
   showDuration(duration.getSector());
   offset.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
   showOffset(offset.getSector());
