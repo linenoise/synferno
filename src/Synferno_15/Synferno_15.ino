@@ -91,7 +91,7 @@ void loop() {
 
     // and when do we need to turn it off?
     byte fireOffAt = (fireOnAt + duration.getSector()) % MIDI_CLOCKS_PER_BEAT;
-    if ( counter == fireOffAt ) {
+    if ( counter == fireOffAt || counter == ((fireOffAt+1)%MIDI_CLOCKS_PER_BEAT)) {
       // turn off the fire
       fireLeft.off();
       fireRight.off();
