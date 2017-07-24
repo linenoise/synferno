@@ -28,13 +28,19 @@ class MIDI{
   public:
     void begin();
 
-    boolean update();
+    boolean update(); // process MIDI messages.
 
-    byte getCounter();
+    byte getCounter(); // 0-23 ticks
+
+    unsigned long tickLength(); // length of ticks, uS
+    unsigned long beatLength();  // length of 24 ticks (one beat), ms
     
   private:
     byte clockCounter;
-  
+
+    unsigned long tickDuration, beatDuration;
+    
+    void processTick();
 };
 
 #endif

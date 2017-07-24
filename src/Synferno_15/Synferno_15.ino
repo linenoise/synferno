@@ -46,12 +46,15 @@ void setup() {
   // knobs
   duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 355);
   showDuration(duration.getSector());
-  offset.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
-  showOffset(offset.getSector());
+
   frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 553);
   showFrequency(frequency.getSector());
-  options.begin(POT_PIN4, NUM_OPTIONS, 14, 553);
+
+  options.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
   showOptions(options.getSector());
+
+  offset.begin(POT_PIN4, NUM_OPTIONS, 14, 553);
+  showOffset(offset.getSector());
 
   // buttons
   makeFireNow.begin(BUTTON_PIN1);
@@ -94,18 +97,17 @@ void loop() {
 
     // how far back from the poof do we need to trigger the hardware?
     byte fireOnAt = (clocksPerPoof - offset.getSector()) % clocksPerPoof;
-    if ( counter == fireOnAt ) {
+    
+    // and when do we need to turn it off?
+    byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
+
+    // given the current counter and on/off times, should we shoot fire or not?
+    if( timeForFire( counter, fireOnAt, fireOffAt ) ) {
       // turn on the fire
       fireLeft.on();
       fireRight.on();
-    }
-
-    // and when do we need to turn it off?
-    byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
-    byte fireOffAtAlt = (fireOnAt + duration.getSector() +1) % clocksPerPoof;
-    // if we miss a MIDI clock signal, don't want to leave the fire on.
-    if ( counter == fireOffAt || counter == fireOffAtAlt ) {
-      // turn off the fire
+    } else {
+      // turn off the the fire
       fireLeft.off();
       fireRight.off();
     }
@@ -151,6 +153,24 @@ void loop() {
     counter = 0;
     updateInterval.reset();
   }
+}
+
+// helper function to work through the modulo-24 stuff.  PITA.
+boolean timeForFire( byte clock, byte start, byte stop ) {
+  // edge case
+  if( start == stop ) return( false );
+
+  // easy case.
+  if( stop > start ) {
+    if( clock >= start && clock < stop ) return( true );
+    else return( false );
+  }
+
+  // so, start > stop
+  // harder case, with the modulo-24 stuff.  Ugh.
+  if( clock >= stop && clock < start ) return( false );
+  else return( true );
+  
 }
 
 // BOOOOSH!
