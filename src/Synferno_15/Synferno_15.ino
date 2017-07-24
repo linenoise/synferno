@@ -50,11 +50,11 @@ void setup() {
   frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 553);
   showFrequency(frequency.getSector());
 
-  options.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
-  showOptions(options.getSector());
-
   offset.begin(POT_PIN4, NUM_OPTIONS, 14, 553);
   showOffset(offset.getSector());
+
+  options.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
+  showOptions(options.getSector());
 
   // buttons
   makeFireNow.begin(BUTTON_PIN1);

@@ -4,9 +4,9 @@ void Potentiometer::begin(byte pin, byte sectors, word minimum, word maximum, by
 
 #if FASTADC
   // set ADC prescale to 16
-  sbi(ADCSRA, ADPS2) ;
-  cbi(ADCSRA, ADPS1) ;
-  cbi(ADCSRA, ADPS0) ;
+  sbi(ADCSRA, ADPS2);
+  cbi(ADCSRA, ADPS1);
+  cbi(ADCSRA, ADPS0);
 #endif
 
   this->pin = pin;
@@ -18,6 +18,7 @@ void Potentiometer::begin(byte pin, byte sectors, word minimum, word maximum, by
   pinMode(this->pin, INPUT_PULLUP);
 
   this->currentValue = analogRead(pin);
+  if( sectors > 0 ) this->currentSector = map(this->currentValue, this->minimum, this->maximum, 0, (this->sectors - 1));
 
 }
 

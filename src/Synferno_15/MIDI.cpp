@@ -21,8 +21,8 @@ boolean MIDI::update() {
   if (MIDISerial.available() > 0) {
 
     byte midiByte = MIDISerial.read();
-    byte midiChannel = midiByte & B00001111;
-    byte midiCommand = midiByte & B11110000;
+//    byte midiChannel = midiByte & B00001111;
+//    byte midiCommand = midiByte & B11110000;
 
     // We get 24 clock ticks per beat.
     if (midiByte == MIDI_CLOCK) {

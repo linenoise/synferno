@@ -11,8 +11,7 @@ void Button::begin(byte pin, boolean pressedValue) {
 }
 
 boolean Button::update() {
- 
-  // there's no good reason to sample more than 1/ms.  Nyquist frequency, etc.
+   // there's no good reason to sample more than 1/ms.  Nyquist frequency, etc.
   static Metro updateInterval(1UL);
   if( ! updateInterval.check() ) return( false );
   updateInterval.reset();
