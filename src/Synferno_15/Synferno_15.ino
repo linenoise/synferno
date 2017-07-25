@@ -44,16 +44,16 @@ void setup() {
   showFireRight(fireRight.getState());
 
   // knobs
-  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 355);
+  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 340);
   showDuration(duration.getSector());
 
-  frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 553);
+  frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 545);
   showFrequency(frequency.getSector());
 
-  offset.begin(POT_PIN4, NUM_OPTIONS, 14, 553);
+  offset.begin(POT_PIN4, MIDI_CLOCKS_PER_BEAT, 14, 545);
   showOffset(offset.getSector());
 
-  options.begin(POT_PIN2, MIDI_CLOCKS_PER_BEAT, 14, 235);
+  options.begin(POT_PIN2, NUM_OPTIONS, 14, 200);
   showOptions(options.getSector());
 
   // buttons

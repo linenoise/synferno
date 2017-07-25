@@ -41,7 +41,11 @@ boolean Potentiometer::update() {
     this->currentValue = newValue;
 
     // collapse reading into sectors
-    byte newSector = map(newValue, this->minimum, this->maximum, 0, (this->sectors - 1));
+    byte newSector = map(
+        constrain(newValue, this->minimum, this->maximum), 
+        this->minimum, this->maximum, 
+        0, (this->sectors - 1)
+    );
 
     // is there a change in sector?
     if ( newSector != this->currentSector ) {
