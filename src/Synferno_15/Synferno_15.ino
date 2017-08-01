@@ -93,7 +93,7 @@ void loop() {
     byte counter = midi.getCounter();
 
     // use frequency knob to adjust how long we wait between poofs (scale MIDI clock signals per beat)
-    byte clocksPerPoof = map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, FREQUENCY_DEVIATION * MIDI_CLOCKS_PER_BEAT, MIDI_CLOCKS_PER_BEAT / FREQUENCY_DEVIATION);
+    byte clocksPerPoof = MIDI_CLOCKS_PER_BEAT;//map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, FREQUENCY_DEVIATION * MIDI_CLOCKS_PER_BEAT, MIDI_CLOCKS_PER_BEAT / FREQUENCY_DEVIATION);
 
     // how far back from the poof do we need to trigger the hardware?
     byte fireOnAt = (clocksPerPoof - offset.getSector()) % clocksPerPoof;
