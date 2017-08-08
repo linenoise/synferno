@@ -44,7 +44,8 @@ void setup() {
   showFireRight(fireRight.getState());
 
   // knobs
-  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 340);
+  duration.begin(POT_PIN1, 12, 13, 340);
+//  duration.begin(POT_PIN1, 12, 13, 340);
   showDuration(duration.getSector());
 
   frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 545);
@@ -93,13 +94,15 @@ void loop() {
     byte counter = midi.getCounter();
 
     // use frequency knob to adjust how long we wait between poofs (scale MIDI clock signals per beat)
-    byte clocksPerPoof = map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, FREQUENCY_DEVIATION * MIDI_CLOCKS_PER_BEAT, MIDI_CLOCKS_PER_BEAT / FREQUENCY_DEVIATION);
+    //byte clocksPerPoof = map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, FREQUENCY_DEVIATION * MIDI_CLOCKS_PER_BEAT, MIDI_CLOCKS_PER_BEAT / FREQUENCY_DEVIATION);
 
     // how far back from the poof do we need to trigger the hardware?
-    byte fireOnAt = (clocksPerPoof - offset.getSector()) % clocksPerPoof;
+//    byte fireOnAt = (clocksPerPoof - offset.getSector()) % clocksPerPoof;
+    byte fireOnAt = (MIDI_CLOCKS_PER_BEAT - offset.getSector()) % MIDI_CLOCKS_PER_BEAT;
     
     // and when do we need to turn it off?
-    byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
+//    byte fireOffAt = (fireOnAt + duration.getSector()) % clocksPerPoof;
+    byte fireOffAt = (fireOnAt + duration.getSector()) % MIDI_CLOCKS_PER_BEAT;
 
     // given the current counter and on/off times, should we shoot fire or not?
     if( timeForFire( counter, fireOnAt, fireOffAt ) ) {
