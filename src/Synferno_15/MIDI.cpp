@@ -9,7 +9,7 @@ void MIDI::begin() {
   MIDISerial.begin(31250);
   delay(100);
 
-  clockCounter = 255; // no MIDI signal; we're "off the clock".
+  clockCounter = 255; // start somewhere
   tickDuration = 20833; // us, 120 bpm
   beatDuration = 500; // ms, 120 bpm
 }
@@ -56,7 +56,7 @@ byte MIDI::getCounter() {
 
 void MIDI::processTick() {
   // increment the clock
-  clockCounter = (clockCounter + 1) % MIDI_CLOCKS_PER_BEAT;
+  clockCounter++;
 
   // time the ticks
   static unsigned long lastTick = micros();
@@ -69,7 +69,7 @@ void MIDI::processTick() {
   tickDuration = (tickDuration*(smoothTick-1) + deltaTick)/smoothTick;
 
   // time the beats
-  if( clockCounter==0 ) {
+  if( (clockCounter % MIDI_CLOCKS_PER_BEAT) == 0 ) {
     // time the beats
     static unsigned long lastBeat = millis();
     unsigned long thisBeat = millis();

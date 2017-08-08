@@ -24,7 +24,7 @@
 
 class Potentiometer{
   public:
-    void begin(byte pin, byte sectors=0, word minimum=0, word maximum=1023, byte smoothing=10);
+    void begin(byte pin, byte sectors, word Rpot, word Rpullup=37500, byte smoothing=10);
 
     boolean update();
 
@@ -33,7 +33,7 @@ class Potentiometer{
 
   private:
     byte pin, smoothing, sectors;
-    word maximum, minimum;
+    word Rpot, Rpullup;
 
     unsigned long currentValue;
     byte currentSector;

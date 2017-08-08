@@ -1,6 +1,6 @@
 #include "Potentiometer.h"
 
-void Potentiometer::begin(byte pin, byte sectors, word minimum, word maximum, byte smoothing) {
+void Potentiometer::begin(byte pin, byte sectors, word Rpot, word Rpullup, byte smoothing) {
 
 #if FASTADC
   // set ADC prescale to 16
@@ -10,16 +10,16 @@ void Potentiometer::begin(byte pin, byte sectors, word minimum, word maximum, by
 #endif
 
   this->pin = pin;
-  this->smoothing = smoothing;
-  this->minimum = minimum;
-  this->maximum = maximum;
   this->sectors = sectors;
+  this->Rpot = Rpot;
+  this->smoothing = smoothing;
 
+  // use internal pullup resistor.
   pinMode(this->pin, INPUT_PULLUP);
+  this->Rpullup = Rpullup;
 
-  this->currentValue = analogRead(pin);
-  if( sectors > 0 ) this->currentSector = map(this->currentValue, this->minimum, this->maximum, 0, (this->sectors - 1));
-
+  this->currentValue = 0;
+  this->currentSector = 0;
 }
 
 boolean Potentiometer::update() {
@@ -35,33 +35,24 @@ boolean Potentiometer::update() {
   if ( smoothing > 0 ) {
     newValue = (currentValue * (smoothing - 1) + newValue) / smoothing;
   }
-
-  if ( sectors > 0 ) {
-    // store current value
-    this->currentValue = newValue;
-
-    // collapse reading into sectors
-    byte newSector = map(
-        constrain(newValue, this->minimum, this->maximum), 
-        this->minimum, this->maximum, 
-        0, (this->sectors - 1)
-    );
-
-    // is there a change in sector?
-    if ( newSector != this->currentSector ) {
-      this->currentSector = newSector;
-      return ( true );
-    } else {
-      return ( false );
-    }
+  
+  // store current value
+  this->currentValue = newValue;
+    
+  // calculate sectors
+  // Vout/Vin = fr*Rpot/(Rpullup+fr*Rpot)
+  // fr = Vout*Rpullup/(Rpot*(Vin-Vout))
+  // sector = (sectors-1)*fr
+  unsigned long num = (sectors-1) * newValue * Rpullup;
+  unsigned long den = Rpot * (1024L - newValue);
+  byte newSector = num/den;
+  
+  // is there a change in sector?
+  if ( newSector != this->currentSector ) {
+    this->currentSector = newSector;
+    return ( true );
   } else {
-    // is there a change in value?
-    if ( newValue != this->currentValue ) {
-      this->currentValue = newValue;
-      return ( true );
-    } else {
-      return ( false );
-    }
+    return ( false );
   }
 }
 

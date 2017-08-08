@@ -30,7 +30,7 @@ class MIDI{
 
     boolean update(); // process MIDI messages.
 
-    byte getCounter(); // 0-23 ticks
+    byte getCounter(); // 0-255 ticks
 
     unsigned long tickLength(); // length of ticks, uS
     unsigned long beatLength();  // length of 24 ticks (one beat), ms
