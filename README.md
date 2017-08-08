@@ -48,6 +48,7 @@ The following parts are required to build the Synferno console.
 | Interface | 1x       | Arming Toggle Switch Cover | [Toggle Switch Cover GT-4R](http://www.mouser.com/ProductDetail/CW-Industries/GT-4R/?qs=sGAEpiMZZMtQ1ytNl72Bk4W6RQFxQU1iz3A6OXxfbKA%3d) |
 | Interface | 1x       | Manual Fire Switch | [Sparkfun Big Red Button](https://www.sparkfun.com/products/9181) |
 | Interface | 1x       | Duration Slider | [Slide Potentiometer PTF01-151A-203B2](http://www.mouser.com/search/ProductDetail.aspx?R=0virtualkey0virtualkeyPTF01-151A-203B2) |
+| Interface | 1x       | Duration Slider Cap | [Slide Control B/W](http://www.mouser.com/ProductDetail/Eagle-Plastic-Devices/450-SL2612/) |
 | Interface | 1x       | Calibration Knob | [Knob Potentiometer](http://www.mouser.com/ProductDetail/Bourns/3310Y-001-103L/?qs=sGAEpiMZZMtC25l1F4XBUzucK%2fsLA9imt%2fQ5wgh8OPI%3d) |
 | Interface | 1x       | Frequency Knob | [Rotary Potentiometer](https://www.adafruit.com/product/562) |
 | Interface | 1x       | Frequency Knob Cover | [Rotary Potentiometer Cover](https://www.adafruit.com/product/2046) |
