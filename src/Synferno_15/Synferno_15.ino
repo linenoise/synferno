@@ -44,8 +44,8 @@ void setup() {
   showFireRight(fireRight.getState());
 
   // knobs
+//  duration.begin(POT_PIN1, MIDI_CLOCKS_PER_BEAT, 13, 340);
   duration.begin(POT_PIN1, 12, 13, 340);
-//  duration.begin(POT_PIN1, 12, 13, 340);
   showDuration(duration.getSector());
 
   frequency.begin(POT_PIN3, FREQUENCY_SECTORS, 14, 545);
