@@ -13,18 +13,19 @@ The synferno console is the device that sits in the DJ booth and allows the perf
 The back of the console has six interface components:
 
 * One DIN-5 MIDI input port
-* One potentiometer for calibration
+* One knob potentiometer for calibration
 * One rocker-style power switch
 * One IEC power socket
 * Two SpeakOn connectors to drive the flame effects
 
-The top of the console has nine interface components:
+The top of the console has ten interface components:
 
 * One blue LED indicating power supply status
 * One green LED indicating microcontroller status
 * One yellow LED indicating MIDI synchronization status
 * One orange LED indicating controller arming status
 * One red LED indicating fire control signal status
+* One rotary potentiometer to set poof frequency
 * One slide potentiometer to set flame duration
 * One key-lock switch to ensure user is permitted to run console
 * One arming switch to ensure user wants to run console
@@ -49,7 +50,9 @@ The following parts are required to build the Synferno console.
 | Interface | 1x       | Duration Slider | [Slide Potentiometer PTF01-151A-203B2](http://www.mouser.com/search/ProductDetail.aspx?R=0virtualkey0virtualkeyPTF01-151A-203B2) |
 | Interface | 1x       | Duration Slider Cap | [Slide Control B/W](http://www.mouser.com/ProductDetail/Eagle-Plastic-Devices/450-SL2612/) |
 | Interface | 1x       | Calibration Knob | [Knob Potentiometer](http://www.mouser.com/ProductDetail/Bourns/3310Y-001-103L/?qs=sGAEpiMZZMtC25l1F4XBUzucK%2fsLA9imt%2fQ5wgh8OPI%3d) |
-| Interface | 1x       | Key Lock | [Key Lock KO128F2007](http://www.mouser.com/ProductDetail/E-Switch/KO128F2007/?qs=sGAEpiMZZMsw5ceDr7HJSDhm1FNsn9uc)
+| Interface | 1x       | Frequency Knob | [Rotary Potentiometer](https://www.adafruit.com/product/562) |
+| Interface | 1x       | Frequency Knob Cover | [Rotary Potentiometer Cover](https://www.adafruit.com/product/2046) |
+| Interface | 1x       | Key Lock | [Key Lock KO128F2007](http://www.mouser.com/ProductDetail/E-Switch/KO128F2007/?qs=sGAEpiMZZMsw5ceDr7HJSDhm1FNsn9uc) |
 | Power     | 1x       | Locking Power Cable | [NEMA5-15 IL13-US1-SVT-3100-183](http://www.mouser.com/ProductDetail/Schaffner/IL13-US1-SVT-3100-183/?qs=sGAEpiMZZMvXcJVS4l7FPzCKqis1WRpbesAGrSNHj1w%3d) |
 | Power     | 1x       | Power Socket | [IEC Socket](http://www.mouser.com/ProductDetail/Schurter/62002300/?qs=sGAEpiMZZMvh4ezHM5rsUjbMf3rMlzcg3muYRtLA8Pw%3d) |
 | Power     | 1x       | Power Switch | [Rocker Switch](http://www.mouser.com/ProductDetail/ZF/SRB22A2FBBNN/?qs=sGAEpiMZZMt%252bZbscA2DaEkUexJYfg5jP) |
