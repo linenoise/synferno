@@ -32,6 +32,8 @@ class MIDI{
 
     byte getCounter(); // 0-23 ticks
 
+    void resetCounter(); // set counter back to 0
+
     unsigned long tickLength(); // length of ticks, uS
     unsigned long beatLength();  // length of 24 ticks (one beat), ms
     

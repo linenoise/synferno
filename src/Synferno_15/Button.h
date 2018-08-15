@@ -7,6 +7,7 @@
 
 // pins
 #define BUTTON_PIN1 7
+#define BUTTON_PIN2 12
 
 class Button{
   public:

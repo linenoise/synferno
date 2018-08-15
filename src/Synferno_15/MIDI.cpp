@@ -54,6 +54,10 @@ byte MIDI::getCounter() {
   return ( clockCounter );
 }
 
+void MIDI::resetCounter() {
+  clockCounter = 0;
+}
+
 void MIDI::processTick() {
   // increment the clock
   clockCounter = (clockCounter + 1) % MIDI_CLOCKS_PER_BEAT;
