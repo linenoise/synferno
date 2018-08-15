@@ -26,6 +26,7 @@ Potentiometer duration, offset, frequency, options;
 // Fire button
 #include "Button.h"
 Button makeFireNow;
+Button resetCounter;
 
 void setup() {
   Serial.begin(115200);
@@ -60,6 +61,7 @@ void setup() {
   // buttons
   makeFireNow.begin(BUTTON_PIN1);
   showMakeFireNow(makeFireNow.getState());
+  resetCounter.begin(BUTTON_PIN2);
 }
 
 void loop() {
@@ -79,6 +81,11 @@ void loop() {
   if ( frequency.update() ) {
     // have a change in frequency
     showFrequency(map(frequency.getSector(), 0, FREQUENCY_SECTORS-1, 0 - ((FREQUENCY_SECTORS -1) / 2), (FREQUENCY_SECTORS-1) / 2));
+  }
+  if (resetCounter.update() && resetCounter.getState()) {
+    // reset button has just been pressed.  Reset the MIDI clock.
+    Serial << F("reset counter") << endl;
+    midi.resetCounter();
   }
 
   // 2. decode the MIDI situation
@@ -118,7 +125,6 @@ void loop() {
     // report tick, noting we do this after the hardware-level update
     showMIDI(midi.getCounter());
   }
-
 
   // 3. override with the Make Fire Now button
   if ( makeFireNow.update() ) {
@@ -353,4 +359,3 @@ void showCounter(byte row, byte col, int counter) {
   if ( oled.buffer.length() < 2 ) oled.buffer += " ";
   oled.write(row, col); // don't pad, place at a specific location
 }
-
